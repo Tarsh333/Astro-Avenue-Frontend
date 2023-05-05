@@ -1,0 +1,73 @@
+.nav {
+    background-color: rgb(2, 2, 6);
+    color: white;
+    display: flex;
+    padding: 0px 12px;
+    font-size: 25px;
+}
+
+.nav_container {
+    color: white;
+}
+
+.nav_left {
+    margin-right: auto;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 24px;
+    padding: 12px;
+
+}
+
+.nav_right {
+    margin-left: auto;
+    padding: 0px 10px;
+    font-size: 18px;
+    display: flex;
+}
+
+.nav_right div.link {
+    padding: 12px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav a:hover{
+    color: rgb(85, 184, 154);
+}
+
+.nav .selected {
+    background-color: rgb(85, 184, 154);
+    color: black;
+    font-weight: bold;
+}
+
+.selected:hover a {
+    color: black !important;
+}
+#resources{
+    position: relative;
+}
+#resources .dropdown{
+    display: none;
+    position: absolute;
+    background-color: black;
+    color: white;
+    width: max-content;
+}
+#resources .dropdown a{
+    padding: 10px;
+    font-size: 15px;
+}
+#resources:hover .dropdown{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    z-index: 50;
+    top: 100%;
+}
+#resources hr{
+    width: 100%;
+    border:0.5px solid rgb(85, 184, 154);
+}
