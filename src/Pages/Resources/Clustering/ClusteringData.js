@@ -17,7 +17,7 @@ const data=[
     {
         text:'KMeans++ is a variation of the original KMeans algorithm, designed to select better initial centroids for the clusters.The algorithm starts by randomly selecting the first centroid from the data points. It then selects each subsequent centroid by choosing a data point that is farthest from the already chosen centroids. This process continues until K centroids have been selected',
         title:'Kmeans Plus Plus',
-        image:'http://localhost:8000/image/static_image|kmeansPP.png',
+        image:'http://localhost:8000/kmeansPP.png',
         link1:'/cluster/ds1/kmeansPP.html',
         link2:'/cluster/ds2/kmeansPP.html',
         link3:'/cluster/ds3/kmeansPP.html',
@@ -25,7 +25,7 @@ const data=[
     {
         text:'Bisecting KMeans is a clustering algorithm that is a variation of the standard KMeans algorithm. The algorithm starts by assigning all data points to a single cluster. Then, it repeatedly bisects the cluster with the highest sum of squared distances to its centroid, creating two new clusters from the resulting split. This process continues until a desired number of clusters is reached or until some stopping criteria is met',
         title:'Bisecting Kmeans ',
-        image:'http://localhost:8000/image/static_image|bisecting.png',
+        image:'http://localhost:8000/bisecting.png',
         link1:'/cluster/ds1/bisecting.html',
         link2:'/cluster/ds2/bisecting.html',
         link3:'/cluster/ds3/bisecting.html',
@@ -33,7 +33,7 @@ const data=[
     {
         text:'Hierarchical clustering is a type of unsupervised machine learning algorithm used for grouping similar data points together into clusters. In the max-linkage method of hierarchical clustering, also known as complete linkage, the distance between two clusters is calculated as the maximum distance between any two data points in the two clusters. The algorithm starts by assigning each data point to its own cluster. It then iteratively merges the two clusters that are farthest apart, based on the maximum distance between their data points. ',
         title:'Hierarchical (Max Linkage)',
-        image:'http://localhost:8000/image/static_image|maxLinkage.png',
+        image:'http://localhost:8000//maxLinkage.png',
         link1:'/cluster/ds1/maxLinkage.html',
         link2:'/cluster/ds2/maxLinkage.html',
         link3:'/cluster/ds3/maxLinkage.html',
