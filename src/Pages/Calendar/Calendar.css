@@ -1,0 +1,27 @@
+.calendar_card_container{
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    margin: auto;
+    justify-content: space-evenly;
+}
+
+.calendar_banner{
+    position: relative;
+    background-color: rgb(228,231,235);
+
+}
+.calendar_banner img{
+    width: 100%;
+    height: 30vh;
+}
+.calendar_banner h1{
+    position: absolute;
+    top: 33%;
+    z-index: 5;
+    color: white;
+    font-size: 60px;
+    width: 100%;
+    text-transform: uppercase;
+    text-shadow: 2px -1px 4px rgba(0,0,0,0.6);
+}

@@ -1,0 +1,111 @@
+.nav {
+    background-color: rgb(2, 2, 6);
+    color: white;
+    display: flex;
+    padding: 0px 12px;
+    font-size: 25px;
+}
+.logout{
+    /* background-color: rgb(85,184,154); */
+    /* margin-top: 7px; */
+    margin-right: -8px;
+    width: 80px;
+    /* color: rgb(0, 0, 0); */
+    font-size: 18px;
+    /* border-radius: 7px; */
+    background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+}
+.login{
+    /* margin-right: -8px;
+    width: 80px;
+    font-size: 18px;
+    background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center; */
+  display: inline-block;
+  padding: 12px 20px;
+  background-color: #9b8282;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+.login:hover {
+    background-color: #424040;
+    color: #ffffff;
+  }
+.nav_container {
+    color: white;
+}
+
+.nav_left {
+    margin-right: auto;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 24px;
+    padding: 12px;
+
+}
+
+.nav_right {
+    margin-left: auto;
+    padding: 0px 10px;
+    font-size: 18px;
+    display: flex;
+}
+
+.nav_right div.link {
+    padding: 12px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.nav a:hover{
+    color: rgb(85, 184, 154);
+}
+
+.nav .selected {
+    background-color: rgb(85, 184, 154);
+    color: black;
+    font-weight: bold;
+}
+
+.selected:hover a {
+    color: black !important;
+}
+#resources{
+    position: relative;
+}
+#resources .dropdown{
+    display: none;
+    position: absolute;
+    background-color: black;
+    color: white;
+    width: max-content;
+}
+#resources .dropdown a{
+    padding: 10px;
+    font-size: 15px;
+}
+#resources:hover .dropdown{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    z-index: 50;
+    top: 100%;
+}
+#resources hr{
+    width: 100%;
+    border:0.5px solid rgb(85, 184, 154);
+}

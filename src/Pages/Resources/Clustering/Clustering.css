@@ -1,0 +1,48 @@
+.clustering-info h2 {
+    margin-top: 50px;
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 1.75em;
+    font-weight: 500;
+    color: white;
+}
+
+.clustering-info p {
+    line-height: 24px;
+    margin-bottom: 30px;
+    color: white;
+}
+
+.clustering-info div {
+    width: 50%;
+    margin: auto;
+}
+
+.clustering-info img {
+    width: 100%;
+}
+
+.container {
+    width: 70%;
+    margin: auto;
+}
+.cards{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.clustering{
+    /* background-image: linear-gradient(45deg, #7c9885, #b5b682); */
+    background-color: rgb(34, 34, 34);
+}
+.clustering .cards h1{
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    color: white;
+    margin-top: 40px;
+}
+.asteroid-belt{
+    width: calc(100% - 10px)!important;
+}
