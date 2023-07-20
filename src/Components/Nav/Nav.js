@@ -14,12 +14,14 @@ function NavBar(props) {
     const [value,setValue] = useState('')
     const handleClick =()=>{
         signInWithPopup(auth,provider).then((data)=>{
+          console.log(data);
             setToken(data.user.accessToken)
             setValue(data.user.email)
             props.tkn(data.user.accessToken)
             // setAuth(true)
             // localStorage.setItem("auth",true)
             localStorage.setItem("email",data.user.email)
+            localStorage.setItem('exp',data.user.stsTokenManager.expirationTime)
         })
     }
     const logout =()=>{
@@ -28,15 +30,15 @@ function NavBar(props) {
       Navigate('/')
       window.location.reload()
   }
-    useEffect(()=>{
-        setValue(localStorage.getItem('email'))
-    },[])
+    // useEffect(()=>{
+    //     setValue(localStorage.getItem('email'))
+    // },[])
 
 
   return (
     <div className='nav'>
       <div className='nav_left'>Astro Avenue</div>
-      {value  ?
+      {props.auth  ?
       <div className='nav_right'>
         <div className={linkk === '/' ? 'selected link' : 'link'}>
           <Link to="/" className='nav_link'>Home</Link>
