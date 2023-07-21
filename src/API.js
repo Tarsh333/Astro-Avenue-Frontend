@@ -49,30 +49,33 @@ const getstaticCalendar = async (setstaticCalendar) => {
     setstaticCalendar(result)
 }
 const postImage = async (image,url,setFxn) => {
-    let formData = new FormData()
+  console.log(image,url)
+    // let formData = new FormData()
     let data=new FormData()
-    formData.append('file', image.data)
+    // formData.append('file', image.data)
+    // console.log(formData);
     data.append('file', image.data)
     data.append("upload_preset", "chat-app");
     data.append("cloud_name", "dtdehangx");
-    fetch("https://api.cloudinary.com/v1_1/dtdehangx/image/upload", {
+    // console.log(data)
+    
+    const upload= await fetch("https://api.cloudinary.com/v1_1/dtdehangx/image/upload", {
         method: "post",
         body: data,
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          console.log(data.url.toString());
-        })
-        .catch((err) => {
-          console.log(err);
-        });
-    const response = await fetch(url, {
-      method: 'POST',
-      body: formData,
-      headers: {
-        Authorization: localStorage.getItem("auth-token"),
-      },
-    })
+      });
+      const upload_json = await upload.json();
+      //  console.log(upload_json.url)
+        
+      const response = await fetch(url, {
+        method: 'POST',
+        body: JSON.stringify({ // Stringify the JSON object
+          url: upload_json.url,
+        }),
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: localStorage.getItem("auth-token"),
+        },
+      });
     const res=await response.json()
     console.log(res);
     setFxn((prev)=>{
