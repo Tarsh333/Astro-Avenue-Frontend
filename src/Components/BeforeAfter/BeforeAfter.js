@@ -9,7 +9,7 @@ const BeforeAfter = ({before,after,id}) => {
         </div>
         <div className='after'>
         <h2>After Processing</h2>
-            { console.log("modefied:", after) }
+            {/* { console.log("modefied:", after) } */}
             <img src={after}/>
         </div>
     </div>

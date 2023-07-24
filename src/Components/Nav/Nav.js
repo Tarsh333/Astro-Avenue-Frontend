@@ -50,7 +50,7 @@ function NavBar(props) {
           <Link to="/gallery"  className='nav_link'>Gallery</Link>
         </div>
         <div className={linkk === '/resources' ? 'selected link' : 'link'} id="resources">
-          <Link to="#" className='nav_link' disabled='true'>Resources</Link>
+          <Link to="#" className='nav_link' disabled={true}>Resources</Link>
           <div className='dropdown'>
           <Link to="/image-processing">Image Processing</Link>
           <hr/>

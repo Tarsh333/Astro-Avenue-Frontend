@@ -49,7 +49,7 @@ const getstaticCalendar = async (setstaticCalendar) => {
     setstaticCalendar(result)
 }
 const postImage = async (image,url,setFxn) => {
-  console.log(image,url)
+//   console.log(image,url)
     // let formData = new FormData()
     let data=new FormData()
     // formData.append('file', image.data)
@@ -76,12 +76,12 @@ const postImage = async (image,url,setFxn) => {
           Authorization: localStorage.getItem("auth-token"),
         },
       });
-    const res=await response.json()
-    console.log(res);
+    const resp=await response.json()
+    console.log(resp);
     setFxn((prev)=>{
         !prev&&window.scrollBy(0, 400);
         // console.log(prev);
-        return ({preview:image.preview,result:`${process.env.REACT_APP_BACKEND_URL}/${res.resultPath}`})
+        return ({preview:image.preview,result:resp.resp})
     })
     // console.log(`${process.env.REACT_APP_BACKEND_URL}/image/${res.resultPath}`);
     // if (response) setStatus(response.statusText)
