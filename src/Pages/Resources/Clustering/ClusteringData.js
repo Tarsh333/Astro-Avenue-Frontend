@@ -3,7 +3,7 @@ const data=[
         text:'Asteroid belts are regions in the solar system that contain a large number of small celestial bodies called asteroids. These asteroids orbit the sun and can range in size from tiny rocks to large boulders. Detecting and categorizing these asteroids is an important task in astronomy, as it helps us better understand the composition and evolution of our solar system. One technique for detecting asteroid belts in a dataset of celestial bodies is to use clustering algorithms such as DBSCAN (Density-Based Spatial Clustering of Applications with Noise). DBSCAN is a popular clustering algorithm used in data mining and machine learning to group together data points that are closely related to one another based on their spatial proximity.',
         title:'Asteroid Belt Detection',
         image:'https://upload.wikimedia.org/wikipedia/commons/f/f3/InnerSolarSystem-en.png',
-        link:'/asteroidDetector'
+        link:'/asteroid.html'
     },
     {
         text:'KMeans is a popular unsupervised machine learning algorithm used for clustering data. The goal of KMeans is to divide a given set of data points into K clusters, where K is a user-defined parameter. The algorithm starts by randomly assigning K centroids (cluster centers) to the data points. It then iteratively adjusts the centroids and reassigns the data points to the nearest centroid, until the cluster assignments stabilize.',
