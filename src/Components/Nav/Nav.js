@@ -12,6 +12,15 @@ function NavBar(props) {
   const linkk = location.pathname
   const Navigate=useNavigate()
     const [value,setValue] = useState('')
+    const call= async (token)=>{
+      const res=await fetch('http://localhost:8000/forauthorization',{
+        method : "GET",
+        headers: {
+          Authorization: token,
+        },
+      })
+      console.log(res.data);
+    }
     const handleClick =()=>{
         signInWithPopup(auth,provider).then((data)=>{
           console.log(data);
@@ -22,8 +31,10 @@ function NavBar(props) {
             // localStorage.setItem("auth",true)
             localStorage.setItem("email",data.user.email)
             localStorage.setItem('exp',data.user.stsTokenManager.expirationTime)
+            call(data.user.accessToken);
         })
     }
+
     const logout =()=>{
       localStorage.clear()
       props.tkn("")

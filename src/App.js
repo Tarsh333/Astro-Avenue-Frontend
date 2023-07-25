@@ -33,15 +33,15 @@ const App = () => {
 
   },[token])
   
-  // const data= async (token)=>{
-  //   const res=await fetch('http://localhost:8000/forauthorization',{
-  //     method : "GET",
-  //     headers: {
-  //       Authorization: token,
-  //     },
-  //   })
-  //   console.log(res.data);
-  // }
+  const data= async (token)=>{
+    const res=await fetch('http://localhost:8000/forauthorization',{
+      method : "GET",
+      headers: {
+        Authorization: token,
+      },
+    })
+    console.log(res.data);
+  }
   const getToken=(t)=>{
     setToken(t)
   }

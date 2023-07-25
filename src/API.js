@@ -49,11 +49,7 @@ const getstaticCalendar = async (setstaticCalendar) => {
     setstaticCalendar(result)
 }
 const postImage = async (image,url,setFxn) => {
-//   console.log(image,url)
-    // let formData = new FormData()
     let data=new FormData()
-    // formData.append('file', image.data)
-    // console.log(formData);
     data.append('file', image.data)
     data.append("upload_preset", "chat-app");
     data.append("cloud_name", "dtdehangx");
@@ -77,7 +73,7 @@ const postImage = async (image,url,setFxn) => {
         },
       });
     const resp=await response.json()
-    console.log(resp);
+    // console.log(resp);
     setFxn((prev)=>{
         !prev&&window.scrollBy(0, 400);
         // console.log(prev);
