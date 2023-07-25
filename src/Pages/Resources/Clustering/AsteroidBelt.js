@@ -1,10 +1,6 @@
 import React from 'react'
 
 const AsteroidBelt = ({ text, link,image, title }) => {
-    const getCluster=async()=>{
-        const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}${link}`)
-        // const data = await res.text()
-    }
     return (
         <div className='card'>
             <h2 align='center'>{title}</h2>
@@ -19,7 +15,7 @@ const AsteroidBelt = ({ text, link,image, title }) => {
                 </p>
                 <div className='card-button-container'>
 
-                    <button onClick={getCluster} className='asteroid-belt'>Try Yourself</button>
+                    <button onClick={link} className='asteroid-belt'>Try Yourself</button>
                 </div>
             </div>
         </div>

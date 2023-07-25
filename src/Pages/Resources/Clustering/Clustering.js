@@ -32,7 +32,7 @@ const Clustering = () => {
                     </div>
                 </div>
                 <div className='cards'>
-                <AsteroidBelt link={data[0].link} text={data[0].text} title={data[0].title} image={data[0].image}/>
+                <AsteroidBelt link={()=>{renderGraph(data[0].link)}} text={data[0].text} title={data[0].title} image={data[0].image}/>
                 <h1>Grouping celestial bodies to predict galaxies/studying effect of different clustering algorithms on different type of dataset.</h1>
                 {data.map((d,i) => {
                     if(i==0)return<></>
