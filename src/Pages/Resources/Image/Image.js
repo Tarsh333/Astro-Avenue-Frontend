@@ -7,6 +7,9 @@ import { postImage } from '../../../API'
 import BeforeAfter from '../../../Components/BeforeAfter/BeforeAfter'
 const Image = () => {
     const [image, setImage] = useState({ preview: '', data: '',result:null })
+    const [loading1, setLoading1] = useState(false)
+    const [loading2, setLoading2] = useState(false)
+    const [loading3, setLoading3] = useState(false)
     const handleFileChange = (e) => {
         const img = {
             preview: URL.createObjectURL(e.target.files[0]),
@@ -45,10 +48,10 @@ const Image = () => {
                             <h3>Try on another image!</h3>
                             <form onSubmit={(e) => {
                                 e.preventDefault()
-                                postImage(image, `${process.env.REACT_APP_BACKEND_URL}/BackgroundRemover`,setBg)
+                                postImage(image, `${process.env.REACT_APP_BACKEND_URL}/BackgroundRemover`,setBg,setLoading1)
                             }}>
                                     <input type='file' name='file' onChange={handleFileChange} required={true}/>
-                                    <button className="btn" type='submit'>Upload Image</button>
+                                    <button className="btn" type='submit' disabled={loading1}>{loading1?'Loading...':'Upload Image'}</button>
                             </form>
                         </div>
                     </div>
@@ -86,10 +89,10 @@ const Image = () => {
                             <h3>Try on another image!</h3>
                             <form onSubmit={(e) => {
                                 e.preventDefault()
-                                postImage(image, `${process.env.REACT_APP_BACKEND_URL}/ClusterOfColors`,setColor)
+                                postImage(image, `${process.env.REACT_APP_BACKEND_URL}/ClusterOfColors`,setColor,setLoading2)
                             }}>
-                                <input type='file' name='file' onChange={handleFileChange}></input>
-                                <button type='submit'>Upload Image</button>
+                                <input type='file' name='file' onChange={handleFileChange} required={true}></input>
+                                <button type='submit' disabled={loading2}>{loading2?'Loading...':'Upload Image'}</button>
                             </form>
                         </div>
                     </div>
@@ -109,10 +112,10 @@ const Image = () => {
                             <p>Image processing techniques such as Gaussian blur, thresholding, and contour detection are applied to identify star clusters in an astronomical image. The output displays the original image with circles drawn around the detected star clusters. This code can be used for research in astronomy to automatically identify and analyze star clusters in astronomical images.</p>                            <h3>Try on another image!</h3>
                             <form onSubmit={(e) => {
                                 e.preventDefault()
-                                postImage(image, `${process.env.REACT_APP_BACKEND_URL}/ClusterFromImage`,setCluster)
+                                postImage(image, `${process.env.REACT_APP_BACKEND_URL}/ClusterFromImage`,setCluster,setLoading3)
                             }}>
-                                <input type='file' name='file' onChange={handleFileChange}></input>
-                                <button type='submit'>Upload Image</button>
+                                <input type='file' name='file' onChange={handleFileChange} required={true}></input>
+                                <button type='submit' disabled={loading3}>{loading3?'Loading...':'Upload Image'}</button>
                             </form>
                         </div>
                     </div>

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './Gallery.css'
 import Loader from '../../Components/Loader/Loader'
-import { getimod, search } from '../../API'
+import { getImages, getimod, search } from '../../API'
 import galleryimg from '../../Assets/galleryimg.jpg'
 const Gallery = () => {
   const [imod, setimod] = useState(null)
@@ -35,13 +35,19 @@ const Gallery = () => {
     setCurrDate((p) => getNextDay(new Date(p)))
 
   }
+  const [images, setImages] = useState([])
+  useEffect(() => {
+    getImages(setImages)
+  }, [])
+
 
   return (
     <div className="gallery">
       <div className="gallery_banner">
         <img src={galleryimg} alt="Gallery Banner" />
-        <h1 align="center">NASA Image Of The Day</h1>
+        <h1 align="center">Gallery</h1>
       </div>
+        <h1 align="center" className='imod-h1'>NASA Image Of The Day</h1>
       <div className='imod'>
         <button onClick={prev}>&#8249;</button>
         {imod == null ? <div className='loader_container'><Loader /></div>
@@ -56,7 +62,18 @@ const Gallery = () => {
 
         <button disabled={disabled} onClick={next}>&#8250;</button>
       </div>
+      <hr/>
+      <div className='images-card'>
+      <h1 align='center'>Your Images</h1>
 
+        {images.map((i) => {
+          return (
+            <div className={i.feature!="PC"?'small-div':"abc"}>
+              {console.log(i.feature)}
+              {i.feature!="PC"&&<img src={i.original_img} className='small-image'/>}<img src={i.modified_img} className={i.feature!="PC"?'small-image':'abc'}/>
+            </div>)
+        })}
+      </div>
     </div>
   )
 }

@@ -48,7 +48,8 @@ const getstaticCalendar = async (setstaticCalendar) => {
       });
     setstaticCalendar(result)
 }
-const postImage = async (image,url,setFxn) => {
+const postImage = async (image,url,setFxn,setLoading) => {
+  setLoading(true)
     let data=new FormData()
     data.append('file', image.data)
     data.append("upload_preset", "chat-app");
@@ -81,10 +82,21 @@ const postImage = async (image,url,setFxn) => {
     })
     // console.log(`${process.env.REACT_APP_BACKEND_URL}/image/${res.resultPath}`);
     // if (response) setStatus(response.statusText)
+    setLoading(false)
   }
-
+const getImages=async(setImages)=>{
+  const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/images`,{
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: localStorage.getItem("auth-token"),
+    }
+  })
+    const data = await res.json()
+    setImages(data)
+    console.log(data);
+}
 const renderGraph=async(url)=>{
     window.open(`${process.env.REACT_APP_BACKEND_URL}${url}`)
     
 }
-export { getimod, search, getNews, getCalendar,getstaticCalendar,postImage,renderGraph }
+export { getimod, search, getNews, getCalendar,getstaticCalendar,postImage,renderGraph,getImages }

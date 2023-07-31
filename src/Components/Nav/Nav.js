@@ -67,8 +67,6 @@ function NavBar(props) {
           <hr/>
           <Link to="/clustering">Data Clustering</Link>
           <hr/>
-          <Link to="/papers">Research Papers</Link>
-          <hr/>
           </div>
         </div>
         <div className={linkk === '/calendar' ? 'selected link' : 'link'}>
