@@ -28,14 +28,14 @@ const getNews = async (setNews) => {
 }
 const getCalendar = async (setCalendar) => {
 
-    const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/index`)
+    const res = await fetch(`${process.env.REACT_APP_BACKEND_URL}/index`,{
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: localStorage.getItem("auth-token"),
+      }
+    })
     const data = await res.json()
-    // console.log(data)        
-    let result=[]
-    Object.keys(data).forEach(function(key, index) {
-        result.push(data[key])
-      });
-    setCalendar(result)
+    console.log(data.result)        
     
 }
 const getstaticCalendar = async (setstaticCalendar) => {

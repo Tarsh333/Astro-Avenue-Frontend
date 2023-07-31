@@ -23,9 +23,7 @@ const Calendar = () => {
       </div>
       <div className='calendar_card_container'>
 
-        {calendar==null?staticcalendar==null?<Loader/>:staticcalendar.map((d)=>{
-          return (<CalendarCard date={d.date} title={d.title} description={d.description}></CalendarCard>)
-        }):calendar.map((d)=>{
+        {staticcalendar==null?<Loader/>:staticcalendar.map((d)=>{
           return (<CalendarCard date={d.date} title={d.title} description={d.description}></CalendarCard>)
         })}
         
