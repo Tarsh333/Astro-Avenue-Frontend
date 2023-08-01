@@ -51,7 +51,7 @@ const Image = () => {
                                 postImage(image, `${process.env.REACT_APP_BACKEND_URL}/BackgroundRemover`,setBg,setLoading1)
                             }}>
                                     <input type='file' name='file' onChange={handleFileChange} required={true}/>
-                                    <button className="btn" type='submit' disabled={loading1}>{loading1?'Loading...':'Upload Image'}</button>
+                                    <button type='submit' className={loading1?'loading':'abc'} disabled={loading1}>{loading1?'Loading...':'Upload Image'}</button>
                             </form>
                         </div>
                     </div>
@@ -92,7 +92,7 @@ const Image = () => {
                                 postImage(image, `${process.env.REACT_APP_BACKEND_URL}/ClusterOfColors`,setColor,setLoading2)
                             }}>
                                 <input type='file' name='file' onChange={handleFileChange} required={true}></input>
-                                <button type='submit' disabled={loading2}>{loading2?'Loading...':'Upload Image'}</button>
+                                <button type='submit' className={loading2?'loading':'abc'} disabled={loading2}>{loading2?'Loading...':'Upload Image'}</button>
                             </form>
                         </div>
                     </div>
@@ -115,7 +115,7 @@ const Image = () => {
                                 postImage(image, `${process.env.REACT_APP_BACKEND_URL}/ClusterFromImage`,setCluster,setLoading3)
                             }}>
                                 <input type='file' name='file' onChange={handleFileChange} required={true}></input>
-                                <button type='submit' disabled={loading3}>{loading3?'Loading...':'Upload Image'}</button>
+                                <button type='submit' className={loading3?'loading':'abc'} disabled={loading3}>{loading3?'Loading...':'Upload Image'}</button>
                             </form>
                         </div>
                     </div>

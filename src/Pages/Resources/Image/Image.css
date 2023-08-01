@@ -100,3 +100,13 @@ input[type=file]::file-selector-button {
     background-color: #084cdf;
     
   }
+  .loading{
+    background-color: gray!important;
+    border:none!important;
+    color:white!important;
+  }
+  .loading:hover{
+    background-color:gray!important;
+    border:none!important;
+    color:white!important;
+  }
