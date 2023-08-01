@@ -1,4 +1,20 @@
 import jsonData from './calendar.json';
+function parseAndCompareDate(dateStr) {
+  const monthNames = [
+    'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
+  ];
+
+  const [monthName, date] = dateStr.split(' ');
+
+  const monthNum = monthNames.indexOf(monthName);
+
+  const currentYear = new Date().getFullYear();
+  const parsedDate = new Date(2023, monthNum, date);
+  const currentDate = new Date();
+  if (parsedDate >= currentDate) {
+    return true
+  } return false
+}
 
 const API_KEY = process.env.REACT_APP_API_KEY
 const getimod = async (date,setimod) => {
@@ -23,7 +39,7 @@ const search = async (query, setImages) => {
 const getNews = async (setNews) => {
     const res = await fetch(`https://api.spaceflightnewsapi.net/v3/articles`)
     const data = await res.json()
-    data.pop()
+    // data.pop()
     setNews(data)
 }
 const getCalendar = async (setCalendar) => {
@@ -47,6 +63,22 @@ const getstaticCalendar = async (setstaticCalendar) => {
         result.push(data[key])
       });
     setstaticCalendar(result)
+}
+const getstaticCalendarUpcoming = async (setCalendar) => {
+  
+  const data = jsonData
+  // console.log(data);
+  let result=[]
+  Object.keys(data).forEach(function(key, index) {
+    var ans=data[key].date.split(",")[0].split(" ")[0].substring(0,3)+"|"+data[key].date.split(",")[0].split(" ")[1];
+    var string=ans.split("|")[0]+" "+ans.split("|")[1]
+    
+    // console.log(ans);
+    if(parseAndCompareDate(string))
+        result.push({...data[key],date:string})
+      });
+      console.log(result);
+    setCalendar(result.slice(0,5))
 }
 const postImage = async (image,url,setFxn,setLoading) => {
   setLoading(true)
@@ -99,4 +131,4 @@ const renderGraph=async(url)=>{
     window.open(`${process.env.REACT_APP_BACKEND_URL}${url}`)
     
 }
-export { getimod, search, getNews, getCalendar,getstaticCalendar,postImage,renderGraph,getImages }
+export { getimod, search, getNews, getCalendar,getstaticCalendar,postImage,renderGraph,getImages,getstaticCalendarUpcoming }
